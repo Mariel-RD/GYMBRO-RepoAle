@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitTracker - Perfil Coach</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="perfil-coach-page coach-page">
+  <div class="container-fluid coach-shell px-0">
+    <div class="row g-0 min-vh-100">
+      <aside class="col-12 col-lg-auto coach-sidebar d-flex flex-column p-3 p-lg-4">
+        <h5 class="mb-4">FitTracker</h5>
+
+        <nav class="nav flex-column gap-2 mb-4">
+          <a class="nav-link d-flex align-items-center gap-2" href="dashboard-coach.html">
+            <i class="bi bi-grid"></i>
+            Dashboard
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="GestionRutina-coach.html">
+            <i class="bi bi-clipboard2-check"></i>
+            Gestion de Rutinas
+          </a>
+          <a class="nav-link active d-flex align-items-center gap-2" href="perfil-coach.html" aria-current="page">
+            <i class="bi bi-person"></i>
+            Perfil
+          </a>
+        </nav>
+
+        <div class="mt-auto border-top border-secondary-subtle pt-3 d-flex align-items-center gap-3">
+          <div class="coach-user-avatar">AD</div>
+          <div>
+            <div class="fw-semibold">Admin</div>
+            <small class="coach-text-soft">Administrador</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="col p-4 p-xl-5">
+        <header class="mb-4">
+          <h1 class="h2 fw-bold mb-1">Mi Perfil</h1>
+          <p class="coach-text-soft mb-0">Informacion de administrador</p>
+        </header>
+
+        <section class="profile-card coach-cover-card p-4 mb-4">
+          <div class="coach-cover-content d-flex flex-column flex-xl-row justify-content-between gap-4 align-items-xl-start">
+            <div class="d-flex gap-3 gap-md-4 align-items-start flex-wrap">
+              <!-- Avatar con overlay de foto -->
+              <div id="profileAvatarWrapper" style="position:relative; display:inline-block; flex-shrink:0;">
+                <div class="profile-avatar" id="profileAvatarEl">AD</div>
+                <label for="inputFotoPerfil" id="profileAvatarOverlay" title="Cambiar foto"
+                  style="display:none; position:absolute; inset:0; border-radius:50%;
+                    background:rgba(0,0,0,0.55); cursor:pointer;
+                    align-items:center; justify-content:center; flex-direction:column; gap:2px;">
+                  <i class="bi bi-camera-fill" style="font-size:1.5rem; color:#fff;"></i>
+                  <span style="font-size:0.6rem; color:#ddd; font-weight:600; letter-spacing:.5px;">CAMBIAR</span>
+                </label>
+                <input type="file" id="inputFotoPerfil" accept="image/*" style="display:none;">
+              </div>
+
+              <div>
+                <h2 class="h3 mb-1">Admin FitTracker</h2>
+                <div class="d-flex flex-wrap gap-3 coach-text-soft mb-3">
+                  <span><i class="bi bi-envelope me-1"></i>admin@fittracker.com</span>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <p id="displayBio" class="coach-text-soft m-0" style="max-width: 600px;">
+                    <!-- Se mostrará aquí la presentación del coach -->
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button id="btnEditProfile" class="btn btn-outline-light px-4">Editar Perfil</button>
+              <button id="btnSaveProfile" class="btn btn-accent px-4 d-none">Guardar Cambios</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="row g-4 mb-4">
+          <div class="col-12 col-xl-6">
+            <div class="profile-card p-4 h-100">
+              <h3 class="h4 mb-4 d-flex align-items-center gap-2">
+                <i class="bi bi-person"></i>
+                Informacion Personal
+              </h3>
+
+              <div id="profileFeedback" class="mb-3 text-center" style="display:none; font-weight: 500;"></div>
+              <div class="mb-3">
+                <label for="profileNombre" class="form-label coach-text-soft">Nombre</label>
+                <input id="profileNombre" type="text" class="form-control form-control-lg" value="" readonly>
+              </div>
+              <div class="mb-3">
+                <label for="profileApellido" class="form-label coach-text-soft">Apellido</label>
+                <input id="profileApellido" type="text" class="form-control form-control-lg" value="" readonly>
+              </div>
+              <div class="mb-4">
+                <label for="profileCorreo" class="form-label coach-text-soft">Correo electronico</label>
+                <input id="profileCorreo" type="email" class="form-control form-control-lg" value="" readonly>
+              </div>
+              <div class="mb-4">
+                <label for="profileBio" class="form-label coach-text-soft">Sobre mí</label>
+                <textarea id="profileBio" class="form-control" rows="4" placeholder="Escribe algo sobre ti y tu experiencia..." readonly></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-6">
+            <div class="profile-card p-4 h-100">
+              <h3 class="h4 mb-4 d-flex align-items-center gap-2">
+                <i class="bi bi-lock"></i>
+                Seguridad
+              </h3>
+
+              <div class="d-grid gap-3">
+                <button id="btnOpenPasswordModal" class="btn btn-dark-soft btn-lg text-start d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                  <i class="bi bi-lock"></i>
+                  Cambiar Contraseña
+                </button>
+
+                <button id="btnLogout" class="btn btn-danger-soft btn-lg text-start d-flex align-items-center gap-2">
+                  <i class="bi bi-box-arrow-right"></i>
+                  Cerrar Sesion
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="profile-card p-4">
+          <h3 class="h4 mb-4 d-flex align-items-center gap-2">
+            <i class="bi bi-gear"></i>
+            Administracion
+          </h3>
+
+          <a class="btn w-100 btn-lg fw-semibold coach-admin-btn" href="GestionRutina-coach.html">
+            <i class="bi bi-gear me-2"></i>
+            Gestion de Rutinas
+          </a>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal Cambiar Contraseña -->
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="changePasswordModalLabel"><i class="bi bi-lock"></i> Cambiar Contraseña</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="passwordFeedback" class="mb-3 text-center" style="display:none; font-weight: 500;"></div>
+          <div class="mb-3">
+            <label for="currentPassword" class="form-label coach-text-soft">Contraseña actual</label>
+            <input type="password" class="form-control bg-dark border-secondary text-white" id="currentPassword">
+          </div>
+          <div class="mb-3">
+            <label for="newPassword" class="form-label coach-text-soft">Nueva contraseña</label>
+            <input type="password" class="form-control bg-dark border-secondary text-white" id="newPassword">
+          </div>
+          <div class="mb-3">
+            <label for="confirmNewPassword" class="form-label coach-text-soft">Confirmar nueva contraseña</label>
+            <input type="password" class="form-control bg-dark border-secondary text-white" id="confirmNewPassword">
+          </div>
+        </div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" id="btnSavePassword" class="btn btn-accent">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

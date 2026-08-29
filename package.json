@@ -1,0 +1,14 @@
+{
+  "name": "gymbro",
+  "version": "1.0.0",
+  "description": "Proyecto GYMBRO",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "npm start --prefix BackEnd",
+    "frontend": "http-server . -p 3000 -c-1 -o /FrontEnd/html/GYMBRO.html"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1"
+  }
+}

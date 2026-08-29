@@ -1,0 +1,1156 @@
+
+/* ============================================================
+   COACH PAGES - COMPARTIDO
+   Aplica a: dashboard-coach, GestionRutina-coach,
+             CrearRutina-coach, perfil-coach
+   Todos los <body> tienen la clase adicional "coach-page"
+   ============================================================ */
+
+.coach-page {
+  --coach-accent:      #21d97b;
+  --coach-danger:      #f54545;
+  --coach-bg-sidebar:  #171a24;
+  --coach-border-soft: #2b3042;
+  --coach-text-soft:   #9ea9c5;
+  background: radial-gradient(circle at top right, #0c1226 0%, #060b19 45%, #04070f 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.coach-page .coach-shell { min-height: 100vh; }
+
+.coach-page .coach-sidebar {
+  background: var(--coach-bg-sidebar);
+  border-right: 1px solid var(--coach-border-soft);
+  min-height: 100vh;
+  width: 260px;
+}
+
+.coach-page .nav-link {
+  color: var(--coach-text-soft);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-weight: 500;
+}
+
+.coach-page .nav-link:hover {
+  color: #fff;
+  background: #202638;
+}
+
+.coach-page .nav-link.active {
+  background: var(--coach-accent);
+  color: #031208;
+  font-weight: 700;
+}
+
+.coach-page .coach-user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--coach-accent);
+  color: #05150d;
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coach-page .coach-text-soft { color: var(--coach-text-soft); }
+
+/* Tarjeta generica de coach */
+.coach-page .coach-card {
+  background: linear-gradient(95deg, rgba(27, 31, 44, 0.96), rgba(24, 28, 40, 0.96));
+  border: 1px solid var(--coach-border-soft);
+  border-radius: 18px;
+}
+
+/* Botones */
+.coach-page .coach-btn-accent {
+  background: var(--coach-accent);
+  color: #04120a;
+  border: 1px solid var(--coach-accent);
+  font-weight: 600;
+}
+.coach-page .coach-btn-accent:hover { background: #1ece74; color: #04120a; }
+
+.coach-page .btn-dark-soft {
+  background: #2a2f41;
+  color: #fff;
+  border: 1px solid #2a2f41;
+}
+.coach-page .btn-dark-soft:hover { background: #343b51; color: #fff; }
+
+/* Botones icono (cuadrados) */
+.coach-page .coach-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding: 0;
+}
+.coach-page .coach-icon-btn-success { background: rgba(33, 217, 123, 0.22); color: var(--coach-accent); }
+.coach-page .coach-icon-btn-muted   { background: #2a2f41; color: #fff; }
+.coach-page .coach-icon-btn-danger  { background: rgba(245, 69, 69, 0.22); color: var(--coach-danger); }
+.coach-page .coach-icon-btn-success:hover { background: rgba(33, 217, 123, 0.3); }
+.coach-page .coach-icon-btn-muted:hover   { background: #343b51; }
+.coach-page .coach-icon-btn-danger:hover  { background: rgba(245, 69, 69, 0.3); }
+
+/* Inputs / Selects */
+.coach-page .form-control,
+.coach-page .form-select {
+  background-color: #2a2f41;
+  border-color: #2a2f41;
+  color: #fff;
+}
+.coach-page .form-control::placeholder { color: var(--coach-text-soft); }
+.coach-page .form-control:focus,
+.coach-page .form-select:focus {
+  background-color: #2a2f41;
+  border-color: var(--coach-accent);
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(33, 217, 123, 0.2);
+}
+.coach-page .form-label { color: #fff; font-weight: 600; }
+
+@media (max-width: 991.98px) {
+  .coach-page .coach-sidebar { width: 100%; min-height: auto; }
+}
+
+/* ============================================================
+   DASHBOARD COACH - especifico
+   ============================================================ */
+
+/* Icono de estadistica (dashboard coach y cliente) */
+.dashboard-coach-page .coach-icon-wrap,
+.dashboard-cliente-page .cliente-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: rgba(33, 217, 123, 0.22);
+  color: var(--coach-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.dashboard-cliente-page .streak-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 145, 0, 0.28);
+  background:
+    radial-gradient(circle at 80% 24%, rgba(255, 161, 52, 0.16), rgba(255, 161, 52, 0) 34%),
+    radial-gradient(circle at 18% 82%, rgba(33, 217, 123, 0.1), rgba(33, 217, 123, 0) 42%),
+    linear-gradient(115deg, rgba(27, 31, 44, 0.98), rgba(21, 27, 40, 0.98));
+}
+
+.dashboard-cliente-page .streak-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffbe63;
+  font-weight: 700;
+}
+
+.dashboard-cliente-page .streak-hero h2 span {
+  color: #ffbe63;
+}
+
+.dashboard-cliente-page .streak-visual {
+  width: min(350px, 100%);
+  min-height: 210px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-cliente-page .streak-visual-gear {
+  isolation: isolate;
+}
+
+.dashboard-cliente-page .streak-orb {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.dashboard-cliente-page .streak-orb-a {
+  width: 180px;
+  height: 180px;
+  right: 10px;
+  top: 4px;
+  background: radial-gradient(circle, rgba(33, 217, 123, 0.28) 0%, rgba(33, 217, 123, 0) 70%);
+  animation: orbFloatA 4.4s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .streak-orb-b {
+  width: 130px;
+  height: 130px;
+  left: 16px;
+  bottom: 6px;
+  background: radial-gradient(circle, rgba(255, 157, 58, 0.25) 0%, rgba(255, 157, 58, 0) 72%);
+  animation: orbFloatB 3.8s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .streak-athlete {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 330px;
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 26px rgba(0, 0, 0, 0.48)) drop-shadow(0 0 20px rgba(33, 217, 123, 0.3));
+  animation: gearFloat 3.2s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .flame-pet {
+  width: 172px;
+  height: 172px;
+  position: absolute;
+  right: -10px;
+  bottom: -22px;
+  z-index: 2;
+  transform-origin: center bottom;
+  animation: petIdle 2.8s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .ember-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 154, 44, 0.28) 0%, rgba(255, 154, 44, 0) 68%);
+  filter: blur(1px);
+  animation: ringPulse 2.1s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .flame-body,
+.dashboard-cliente-page .flame-core {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 63% 14%, 77% 35%, 84% 55%, 74% 78%, 60% 93%, 50% 100%, 40% 93%, 26% 78%, 16% 55%, 23% 35%, 37% 14%);
+  transform-origin: center bottom;
+}
+
+.dashboard-cliente-page .flame-body {
+  width: 118px;
+  height: 150px;
+  bottom: 8px;
+  background: linear-gradient(180deg, #ffe4b3 0%, #ffb347 34%, #ff7a18 68%, #e6460d 100%);
+  filter: drop-shadow(0 0 14px rgba(255, 121, 24, 0.46));
+  animation: flameSwing 1.5s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .flame-core {
+  width: 62px;
+  height: 86px;
+  bottom: 22px;
+  background: linear-gradient(180deg, #fff8d9 0%, #ffe18e 54%, #ffac39 100%);
+  animation: flameCoreBeat 1.1s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .flame-face {
+  position: absolute;
+  width: 62px;
+  height: 44px;
+  left: 50%;
+  top: 88px;
+  transform: translateX(-50%);
+}
+
+.dashboard-cliente-page .flame-face .eye {
+  position: absolute;
+  top: 6px;
+  width: 10px;
+  height: 14px;
+  background: #1f1c2e;
+  border-radius: 6px;
+  animation: blink 3.8s ease-in-out infinite;
+}
+
+.dashboard-cliente-page .flame-face .eye.left { left: 12px; }
+.dashboard-cliente-page .flame-face .eye.right { right: 12px; }
+
+.dashboard-cliente-page .flame-face .smile {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  width: 22px;
+  height: 11px;
+  border-bottom: 3px solid #1f1c2e;
+  border-radius: 0 0 16px 16px;
+  transform: translateX(-50%);
+}
+
+.dashboard-cliente-page .spark {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe5a8 0%, #ff972f 78%);
+  filter: drop-shadow(0 0 6px rgba(255, 173, 78, 0.52));
+}
+
+.dashboard-cliente-page .spark-a {
+  left: 18px;
+  bottom: 62px;
+  animation: sparkRiseA 2.2s ease-out infinite;
+}
+
+.dashboard-cliente-page .spark-b {
+  left: 132px;
+  bottom: 54px;
+  animation: sparkRiseB 1.9s ease-out infinite 0.4s;
+}
+
+.dashboard-cliente-page .spark-c {
+  left: 90px;
+  bottom: 34px;
+  animation: sparkRiseC 2.5s ease-out infinite 0.8s;
+}
+
+@keyframes petIdle {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes gearFloat {
+  0%,
+  100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-6px) rotate(1.2deg); }
+}
+
+@keyframes orbFloatA {
+  0%,
+  100% { transform: translateY(0) scale(1); opacity: 0.95; }
+  50% { transform: translateY(-8px) scale(1.06); opacity: 0.75; }
+}
+
+@keyframes orbFloatB {
+  0%,
+  100% { transform: translateY(0) scale(1); opacity: 0.92; }
+  50% { transform: translateY(7px) scale(0.95); opacity: 0.7; }
+}
+
+@keyframes ringPulse {
+  0%,
+  100% { transform: scale(0.95); opacity: 0.65; }
+  50% { transform: scale(1.08); opacity: 0.92; }
+}
+
+@keyframes flameSwing {
+  0%,
+  100% { transform: translateX(-50%) rotate(-2deg) scaleY(1); }
+  35% { transform: translateX(-50%) rotate(2.3deg) scaleY(1.06); }
+  70% { transform: translateX(-50%) rotate(-1deg) scaleY(0.97); }
+}
+
+@keyframes flameCoreBeat {
+  0%,
+  100% { transform: translateX(-50%) scale(0.95); }
+  50% { transform: translateX(-50%) scale(1.08); }
+}
+
+@keyframes blink {
+  0%,
+  44%,
+  48%,
+  100% { transform: scaleY(1); }
+  46% { transform: scaleY(0.12); }
+}
+
+@keyframes sparkRiseA {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.8; }
+  100% { transform: translateY(-74px) translateX(14px) scale(0.25); opacity: 0; }
+}
+
+@keyframes sparkRiseB {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.75; }
+  100% { transform: translateY(-68px) translateX(-12px) scale(0.2); opacity: 0; }
+}
+
+@keyframes sparkRiseC {
+  0% { transform: translateY(0) scale(0.7); opacity: 0.65; }
+  100% { transform: translateY(-88px) translateX(8px) scale(0.18); opacity: 0; }
+}
+
+@media (max-width: 575.98px) {
+  .dashboard-cliente-page .streak-visual {
+    width: 260px;
+    min-height: 180px;
+  }
+
+  .dashboard-cliente-page .streak-athlete {
+    max-height: 170px;
+  }
+
+  .dashboard-cliente-page .flame-pet {
+    width: 138px;
+    height: 138px;
+    right: -18px;
+    bottom: -12px;
+  }
+
+  .dashboard-cliente-page .flame-body {
+    width: 98px;
+    height: 124px;
+  }
+
+  .dashboard-cliente-page .flame-core {
+    width: 50px;
+    height: 68px;
+    bottom: 20px;
+  }
+
+  .dashboard-cliente-page .flame-face {
+    top: 68px;
+    transform: translateX(-50%) scale(0.88);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-cliente-page .flame-pet,
+  .dashboard-cliente-page .streak-athlete,
+  .dashboard-cliente-page .streak-orb,
+  .dashboard-cliente-page .ember-ring,
+  .dashboard-cliente-page .flame-body,
+  .dashboard-cliente-page .flame-core,
+  .dashboard-cliente-page .flame-face .eye,
+  .dashboard-cliente-page .spark {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   GESTION DE RUTINAS - especifico
+   ============================================================ */
+
+.gestion-rutina-coach-page .coach-pill {
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.gestion-rutina-coach-page .coach-pill-accent {
+  background: rgba(33, 217, 123, 0.2);
+  color: var(--coach-accent);
+  border: 1px solid rgba(33, 217, 123, 0.15);
+}
+.gestion-rutina-coach-page .coach-pill-muted {
+  background: #2a2f41;
+  color: #fff;
+  border: 1px solid #2a2f41;
+}
+
+.gestion-rutina-coach-page .routine-divider { border-top: 1px solid var(--coach-border-soft); }
+
+.gestion-rutina-coach-page .assigned-user {
+  background: rgba(12, 16, 28, 0.75);
+  border-radius: 14px;
+}
+.gestion-rutina-coach-page .assigned-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--coach-accent);
+  color: #04120a;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.gestion-rutina-coach-page .coach-back-btn {
+  color: var(--coach-text-soft);
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0;
+}
+.gestion-rutina-coach-page .coach-back-btn:hover { color: #fff; }
+
+.gestion-rutina-coach-page .catalog-card {
+  background: linear-gradient(95deg, rgba(27, 31, 44, 0.96), rgba(24, 28, 40, 0.96));
+  border: 1px solid var(--coach-border-soft);
+  border-radius: 16px;
+}
+.gestion-rutina-coach-page .catalog-video-ok  { color: var(--coach-accent); font-weight: 500; }
+.gestion-rutina-coach-page .catalog-video-miss { color: var(--coach-text-soft); }
+
+/* Modales del catalogo y formulario de ejercicio */
+.gestion-rutina-coach-page .coach-catalog-modal .modal-content {
+  background: #090f20;
+  border: 1px solid var(--coach-border-soft);
+  border-radius: 18px;
+  color: #fff;
+}
+.gestion-rutina-coach-page .coach-exercise-form-modal .modal-content {
+  background: #0f1528;
+  border: 1px solid var(--coach-border-soft);
+  border-radius: 16px;
+  color: #fff;
+}
+.gestion-rutina-coach-page .coach-catalog-modal .modal-header,
+.gestion-rutina-coach-page .coach-catalog-modal .modal-body { padding-left: 1.5rem; padding-right: 1.5rem; }
+.gestion-rutina-coach-page .coach-catalog-modal .modal-body { padding-bottom: 1.5rem; }
+/* Las etiquetas del modal de ejercicio van en tono suave, no blanco */
+.gestion-rutina-coach-page .coach-exercise-form-modal .form-label { color: var(--coach-text-soft); font-weight: 500; }
+
+/* ============================================================
+   CREAR RUTINA - especifico
+   ============================================================ */
+
+.crear-rutina-coach-page .coach-back-link {
+  color: var(--coach-text-soft);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.crear-rutina-coach-page .coach-back-link:hover { color: #fff; }
+
+/* Tabla de ejercicios agregados */
+.crear-rutina-coach-page .coach-c-table thead th {
+  background: #2a2f41;
+  color: var(--coach-text-soft);
+  border-bottom: 1px solid var(--coach-border-soft);
+  border-top: 1px solid var(--coach-border-soft);
+  font-weight: 600;
+}
+.crear-rutina-coach-page .coach-c-table td {
+  color: #fff;
+  background: transparent;
+  border-color: var(--coach-border-soft);
+}
+.crear-rutina-coach-page .coach-c-table tbody tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+/* ============================================================
+   PERFIL COACH - especifico
+   ============================================================ */
+
+.perfil-coach-page .profile-card {
+  background: linear-gradient(95deg, rgba(27, 31, 44, 0.96), rgba(24, 28, 40, 0.96));
+  border: 1px solid var(--coach-border-soft);
+  border-radius: 18px;
+}
+
+/* Avatar grande 88px perfil coach y cliente */
+.perfil-coach-page .profile-avatar,
+.perfil-cliente-page .cliente-profile-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--coach-accent);
+  color: #05150d;
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.perfil-coach-page .badge-soft,
+.perfil-cliente-page .cliente-badge-soft {
+  background: rgba(33, 217, 123, 0.2);
+  color: var(--coach-accent);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid rgba(33, 217, 123, 0.15);
+}
+
+.perfil-coach-page .btn-outline-light,
+.perfil-cliente-page .btn-outline-light { border-color: var(--coach-border-soft); }
+.perfil-coach-page .btn-outline-light:hover,
+.perfil-cliente-page .btn-outline-light:hover { background: #22283a; border-color: #3a425d; }
+
+.perfil-coach-page .btn-danger-soft,
+.perfil-cliente-page .cliente-btn-danger {
+  background: var(--coach-danger);
+  border-color: var(--coach-danger);
+  color: #fff;
+}
+.perfil-coach-page .btn-danger-soft:hover,
+.perfil-cliente-page .cliente-btn-danger:hover { background: #dc3939; border-color: #dc3939; color: #fff; }
+
+.perfil-coach-page .coach-admin-btn { background-color: var(--coach-accent); color: #04120a; }
+.perfil-coach-page .coach-admin-btn:hover { background-color: #1ece74; color: #04120a; }
+
+
+
+
+
+/*  rutina-cliente-page*/
+.rutina-cliente-page .coach-day-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(33, 217, 123, .12);
+  color: var(--coach-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.rutina-cliente-page details.coach-card summary { user-select: none; }
+.rutina-cliente-page details.coach-card summary::-webkit-details-marker { display: none; }
+
+.rutina-cliente-page .coach-day-chevron {
+  transition: transform .25s ease;
+  color: var(--coach-text-soft);
+  font-size: 1rem;
+}
+.rutina-cliente-page details[open] .coach-day-chevron { transform: rotate(180deg); }
+
+/* ============================================================
+   MI COACH - especifico
+   ============================================================ */
+
+.mi-coach-page .coach-card-clickable { transition: border-color .2s; }
+.mi-coach-page .coach-card-clickable:hover { border-color: rgba(33,217,123,.5); }
+
+/* Nav pills dentro del modal de perfil */
+#coachModalTabs .nav-link {
+  background: #1a1f30;
+  color: var(--coach-text-soft);
+  border: 1px solid var(--coach-border-soft);
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 0.45rem 1rem;
+}
+#coachModalTabs .nav-link:hover { color: #fff; background: #22283a; }
+#coachModalTabs .nav-link.active {
+  background: var(--coach-accent);
+  color: #031208;
+  border-color: var(--coach-accent);
+  font-weight: 700;
+}
+
+/* ============================================================
+   LANDING PAGE - GYMBRO
+   ============================================================ */
+
+:root {
+  --accent:    #21d97b;
+  --accent-dark: #1ece74;
+  --bg:        #04070f;
+  --bg-card:   rgba(27,31,44,.94);
+  --border:    #2b3042;
+  --soft:      #9ea9c5;
+}
+
+body.lp-body { background: var(--bg); color: #fff; overflow-x: hidden; }
+
+/* NAV */
+.lp-navbar {
+  background: rgba(4,7,15,.88) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(43,48,66,.6);
+}
+.lp-navbar .navbar-brand span { color: var(--accent); }
+.nav-link-lp { color: var(--soft) !important; font-weight: 500; transition: color .2s; }
+.nav-link-lp:hover { color: #fff !important; }
+.btn-accent {
+  background: var(--accent); color: #04120a !important;
+  border: none; font-weight: 700; border-radius: 10px;
+  transition: background .2s, transform .15s;
+}
+.btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 65% -60%;
+  opacity: .92;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(4,7,15,.95) 25%,
+    rgba(4,7,15,.35) 55%,
+    rgba(4,7,15,.0) 100%);
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(33,217,123,.14);
+  border: 1px solid rgba(33,217,123,.3);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: .35rem 1rem;
+  font-size: .85rem; font-weight: 600;
+}
+.hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 800; line-height: 1.1;
+}
+.hero-title .hl { color: var(--accent); }
+.hero-sub { color: var(--soft); font-size: 1.1rem; line-height: 1.7; max-width: 480px; }
+.btn-outline-lp {
+  color: #fff; border: 1px solid var(--border);
+  border-radius: 12px; font-weight: 600;
+  transition: border-color .2s, background .2s;
+  background: transparent;
+}
+.btn-outline-lp:hover { border-color: #fff; background: rgba(255,255,255,.06); color: #fff; }
+
+/* STATS */
+.stats-bar { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); }
+.stat-lbl { color: var(--soft); font-size: .88rem; }
+
+/* FEATURE CARDS */
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: border-color .2s, transform .2s;
+  height: 100%;
+}
+.feature-card:hover { border-color: rgba(33,217,123,.4); transform: translateY(-4px); }
+.feature-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(33,217,123,.14);
+  color: var(--accent);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+}
+
+/* COMO FUNCIONA */
+.how-section {
+  background: linear-gradient(180deg, rgba(33,217,123,.04), transparent);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--accent); color: #04120a;
+  font-weight: 800; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* CTA */
+.cta-card {
+  background: linear-gradient(135deg, rgba(33,217,123,.12), rgba(27,31,44,.96));
+  border: 1px solid rgba(33,217,123,.25);
+  border-radius: 24px;
+}
+
+/* EYEBROW */
+.eyebrow { color: var(--accent); font-weight: 700; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
+
+/* FOOTER */
+.lp-footer { border-top: 1px solid var(--border); color: var(--soft); font-size: .9rem; }
+.lp-footer span { color: var(--accent); }
+
+/* ============================================================
+   STOPWATCH HERO - COACH
+   ============================================================ */
+
+.stopwatch-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(33, 217, 123, 0.28);
+  background:
+    radial-gradient(circle at 80% 24%, rgba(33, 217, 123, 0.16), rgba(33, 217, 123, 0) 34%),
+    radial-gradient(circle at 18% 82%, rgba(20, 150, 80, 0.1), rgba(20, 150, 80, 0) 42%),
+    linear-gradient(115deg, rgba(27, 31, 44, 0.98), rgba(21, 27, 40, 0.98));
+}
+
+.stopwatch-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coach-accent);
+  font-weight: 700;
+}
+
+.stopwatch-hero h2 span {
+  color: var(--coach-accent);
+}
+
+.stopwatch-visual {
+  width: min(350px, 100%);
+  min-height: 210px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch-visual-gear {
+  isolation: isolate;
+}
+
+.stopwatch-orb {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.stopwatch-orb-a {
+  width: 180px;
+  height: 180px;
+  right: 10px;
+  top: 4px;
+  background: radial-gradient(circle, rgba(33, 217, 123, 0.28) 0%, rgba(33, 217, 123, 0) 70%);
+  animation: swOrbFloatA 4.4s ease-in-out infinite;
+}
+
+.stopwatch-orb-b {
+  width: 130px;
+  height: 130px;
+  left: 16px;
+  bottom: 6px;
+  background: radial-gradient(circle, rgba(20, 180, 100, 0.25) 0%, rgba(20, 180, 100, 0) 72%);
+  animation: swOrbFloatB 3.8s ease-in-out infinite;
+}
+
+.stopwatch-pet {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  width: 160px;
+  height: 160px;
+  transform-origin: center;
+  animation: swPetIdle 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.6));
+}
+
+.stopwatch-svg {
+  --border:    #2b3042;
+  --soft:      #9ea9c5;
+}
+
+body.lp-body { background: var(--bg); color: #fff; overflow-x: hidden; }
+
+/* NAV */
+.lp-navbar {
+  background: rgba(4,7,15,.88) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(43,48,66,.6);
+}
+.lp-navbar .navbar-brand span { color: var(--accent); }
+.nav-link-lp { color: var(--soft) !important; font-weight: 500; transition: color .2s; }
+.nav-link-lp:hover { color: #fff !important; }
+.btn-accent {
+  background: var(--accent); color: #04120a !important;
+  border: none; font-weight: 700; border-radius: 10px;
+  transition: background .2s, transform .15s;
+}
+.btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 65% -60%;
+  opacity: .92;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(4,7,15,.95) 25%,
+    rgba(4,7,15,.35) 55%,
+    rgba(4,7,15,.0) 100%);
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(33,217,123,.14);
+  border: 1px solid rgba(33,217,123,.3);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: .35rem 1rem;
+  font-size: .85rem; font-weight: 600;
+}
+.hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 800; line-height: 1.1;
+}
+.hero-title .hl { color: var(--accent); }
+.hero-sub { color: var(--soft); font-size: 1.1rem; line-height: 1.7; max-width: 480px; }
+.btn-outline-lp {
+  color: #fff; border: 1px solid var(--border);
+  border-radius: 12px; font-weight: 600;
+  transition: border-color .2s, background .2s;
+  background: transparent;
+}
+.btn-outline-lp:hover { border-color: #fff; background: rgba(255,255,255,.06); color: #fff; }
+
+/* STATS */
+.stats-bar { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); }
+.stat-lbl { color: var(--soft); font-size: .88rem; }
+
+/* FEATURE CARDS */
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: border-color .2s, transform .2s;
+  height: 100%;
+}
+.feature-card:hover { border-color: rgba(33,217,123,.4); transform: translateY(-4px); }
+.feature-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(33,217,123,.14);
+  color: var(--accent);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+}
+
+/* COMO FUNCIONA */
+.how-section {
+  background: linear-gradient(180deg, rgba(33,217,123,.04), transparent);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--accent); color: #04120a;
+  font-weight: 800; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* CTA */
+.cta-card {
+  background: linear-gradient(135deg, rgba(33,217,123,.12), rgba(27,31,44,.96));
+  border: 1px solid rgba(33,217,123,.25);
+  border-radius: 24px;
+}
+
+/* EYEBROW */
+.eyebrow { color: var(--accent); font-weight: 700; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
+
+/* FOOTER */
+.lp-footer { border-top: 1px solid var(--border); color: var(--soft); font-size: .9rem; }
+.lp-footer span { color: var(--accent); }
+
+/* ============================================================
+   STOPWATCH HERO - COACH
+   ============================================================ */
+
+.stopwatch-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(33, 217, 123, 0.28);
+  background:
+    radial-gradient(circle at 80% 24%, rgba(33, 217, 123, 0.16), rgba(33, 217, 123, 0) 34%),
+    radial-gradient(circle at 18% 82%, rgba(20, 150, 80, 0.1), rgba(20, 150, 80, 0) 42%),
+    linear-gradient(115deg, rgba(27, 31, 44, 0.98), rgba(21, 27, 40, 0.98));
+}
+
+.stopwatch-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coach-accent);
+  font-weight: 700;
+}
+
+.stopwatch-hero h2 span {
+  color: var(--coach-accent);
+}
+
+.stopwatch-visual {
+  width: min(350px, 100%);
+  min-height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch-visual-gear {
+  isolation: isolate;
+}
+
+.stopwatch-orb {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.stopwatch-orb-a {
+  width: 180px;
+  height: 180px;
+  right: 10px;
+  top: 4px;
+  background: radial-gradient(circle, rgba(33, 217, 123, 0.28) 0%, rgba(33, 217, 123, 0) 70%);
+  animation: swOrbFloatA 4.4s ease-in-out infinite;
+}
+
+.stopwatch-orb-b {
+  width: 130px;
+  height: 130px;
+  left: 16px;
+  bottom: 6px;
+  background: radial-gradient(circle, rgba(20, 180, 100, 0.25) 0%, rgba(20, 180, 100, 0) 72%);
+  animation: swOrbFloatB 3.8s ease-in-out infinite;
+}
+
+.stopwatch-pet {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  width: 160px;
+  height: 160px;
+  transform-origin: center;
+  animation: swPetIdle 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.6));
+}
+
+.stopwatch-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.sw-body {
+  fill: #1a1f30;
+  stroke: var(--coach-accent);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 12px rgba(33, 217, 123, 0.3));
+}
+
+.sw-face {
+  fill: #090e1a;
+  stroke: #1ece74;
+  stroke-width: 1.5;
+}
+
+.sw-btn-top {
+  fill: var(--coach-accent);
+  animation: swBtnPress 2s infinite;
+  transform-origin: 50px 16px;
+}
+
+.sw-btn-base {
+  fill: #1a1f30;
+  stroke: var(--coach-accent);
+  stroke-width: 2;
+}
+
+.sw-btn-side {
+  fill: #1ece74;
+}
+
+.sw-tick {
+  stroke: var(--coach-text-soft);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.sw-subdial {
+  fill: none;
+  stroke: #2a2f41;
+  stroke-width: 2;
+}
+
+.sw-sub-hand {
+  stroke: var(--coach-text-soft);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transform-origin: 50px 42px;
+  animation: swSubTickTock 12s linear 1 forwards;
+}
+
+.sw-hand {
+  stroke: var(--coach-accent);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  transform-origin: 50px 55px;
+  animation: swTickTock 2s steps(8, end) 1 forwards;
+  filter: drop-shadow(0 0 6px rgba(33, 217, 123, 0.9));
+}
+
+.sw-center {
+  fill: #ffffff;
+}
+
+.sw-ring {
+  fill: none;
+  stroke: rgba(33, 217, 123, 0.5);
+  stroke-width: 2.5;
+  stroke-dasharray: 263.89;
+  stroke-dashoffset: 263.89;
+  animation: swRingSpin 2s ease-in-out 1 forwards;
+  transform-origin: 50px 55px;
+}
+
+@keyframes swPetIdle {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes swOrbFloatA {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.95; }
+  50% { transform: translateY(-8px) scale(1.06); opacity: 0.75; }
+}
+
+@keyframes swOrbFloatB {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.92; }
+  50% { transform: translateY(7px) scale(0.95); opacity: 0.7; }
+}
+
+@keyframes swTickTock {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes swSubTickTock {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes swBtnPress {
+  0%, 10%, 100% { transform: scaleY(1); }
+  5% { transform: scaleY(0.6); }
+}
+
+@keyframes swRingSpin {
+  0% { transform: rotate(0deg); stroke-dashoffset: 263.89; }
+  50% { stroke-dashoffset: 0; }
+  100% { transform: rotate(360deg); stroke-dashoffset: -263.89; }
+}
+
+@media (max-width: 575.98px) {
+  .stopwatch-visual { width: 260px; min-height: 180px; }
+  .stopwatch-pet { width: 130px; height: 130px; right: 0; bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stopwatch-pet, .stopwatch-orb, .sw-btn-top, .sw-hand, .sw-sub-hand, .sw-ring { animation: none; }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitTracker — Dashboard</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css?v=llama2" />
+</head>
+<body class="dashboard-cliente-page coach-page">
+  <div class="container-fluid coach-shell px-0">
+    <div class="row g-0 min-vh-100">
+
+      <aside class="col-12 col-lg-auto coach-sidebar d-flex flex-column p-3 p-lg-4">
+        <h5 class="mb-4">FitTracker</h5>
+
+        <nav class="nav flex-column gap-2 mb-4">
+          <a class="nav-link active d-flex align-items-center gap-2" href="dashboard-cliente.html" aria-current="page">
+            <i class="bi bi-grid"></i>
+            Dashboard
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="rutina-cliente.html">
+            <i class="bi bi-clipboard2-pulse"></i>
+            Mi Rutina
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="progreso-cliente.html">
+            <i class="bi bi-graph-up-arrow"></i>
+            Progreso
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="mi-coach.html">
+            <i class="bi bi-people"></i>
+            Mi Coach
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="perfil-cliente.html">
+            <i class="bi bi-person"></i>
+            Perfil
+          </a>
+        </nav>
+
+        <div class="mt-auto border-top border-secondary-subtle pt-3 d-flex align-items-center gap-3">
+          <div class="coach-user-avatar">JD</div>
+          <div>
+            <div class="fw-semibold">Juan Diaz</div>
+            <small class="coach-text-soft">Usuario</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="col p-4 p-xl-5">
+        <header class="mb-4">
+          <h1 class="display-6 fw-semibold mb-1">Dashboard</h1>
+          <p class="coach-text-soft mb-0">Resumen general de tu progreso</p>
+        </header>
+
+        <section class="streak-hero coach-card p-4 p-lg-5 mb-4" aria-label="Racha activa de entrenamiento">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-8">
+              <p class="streak-kicker mb-2">Motivación diaria</p>
+              <h2 class="h1 fw-bold mb-2">No dejes de entrenar y mantente en forma</h2>
+              <p class="coach-text-soft mb-4">Si completas tu rutina de hoy, estarás un paso más cerca de tus metas.</p>
+              <a class="btn coach-btn-accent px-4 py-2" href="rutina-cliente.html">
+                <i class="bi bi-lightning-charge-fill me-2"></i>
+                Entrenar ahora
+              </a>
+            </div>
+            <div class="col-12 col-lg-4 d-flex justify-content-lg-end justify-content-center">
+              <div class="streak-visual streak-visual-gear">
+                <span class="streak-orb streak-orb-a" aria-hidden="true"></span>
+                <span class="streak-orb streak-orb-b" aria-hidden="true"></span>
+                <img src="../../Assets/pesa.png" alt="Mancuerna de 20 kilogramos" class="streak-athlete" />
+                <div class="flame-pet" role="img" aria-label="Llama de motivacion de racha">
+                  <span class="ember-ring"></span>
+                  <span class="spark spark-a"></span>
+                  <span class="spark spark-b"></span>
+                  <span class="spark spark-c"></span>
+                  <span class="flame-body"></span>
+                  <span class="flame-core"></span>
+                  <span class="flame-face">
+                    <span class="eye left"></span>
+                    <span class="eye right"></span>
+                    <span class="smile"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tarjetas de estadisticas -->
+        <section class="row g-3 mb-4" aria-label="Estadisticas generales">
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="coach-card p-4 h-100">
+              <div class="cliente-icon-wrap mb-3"><i class="bi bi-clipboard2-pulse"></i></div>
+              <h2 class="display-6 mb-1" id="dash-rutinas-activas">0</h2>
+              <h3 class="h5 mb-1">Rutinas activas</h3>
+              <p class="coach-text-soft mb-0">Rutinas asignadas actualmente</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="coach-card p-4 h-100">
+              <div class="cliente-icon-wrap mb-3"><i class="bi bi-activity"></i></div>
+              <h2 class="display-6 mb-1" id="dash-total-ejercicios">0</h2>
+              <h3 class="h5 mb-1">Ejercicios</h3>
+              <p class="coach-text-soft mb-0">En tu rutina actual</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="coach-card p-4 h-100">
+              <div class="cliente-icon-wrap mb-3"><i class="bi bi-speedometer2"></i></div>
+              <h2 class="display-6 mb-1" id="dash-ultimo-peso">-- kg</h2>
+              <h3 class="h5 mb-1">Último peso</h3>
+              <p class="coach-text-soft mb-0">Registro más reciente</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <article class="coach-card p-4 h-100">
+              <div class="cliente-icon-wrap mb-3"><i class="bi bi-calendar2-check"></i></div>
+              <h2 class="display-6 mb-1" id="dash-ultima-sesion">--</h2>
+              <h3 class="h5 mb-1">Última sesión</h3>
+              <p class="coach-text-soft mb-0">Último progreso registrado</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Mis coaches seleccionados -->
+        <section class="mb-4" aria-label="Mis coaches">
+          <h2 class="h4 mb-3">Mis Coaches</h2>
+          <div class="row g-3" id="dash-mis-coaches">
+             <p class="text-muted p-3">Cargando coaches...</p>
+          </div>
+        </section>
+
+        <!-- Accesos rapidos -->
+        <section class="coach-card p-4" aria-label="Accesos rapidos">
+          <h2 class="h3 mb-4">Accesos Rapidos</h2>
+          <div class="d-flex flex-column flex-sm-row gap-2">
+            <a class="btn coach-btn-accent px-4 py-2" href="rutina-cliente.html">
+              <i class="bi bi-clipboard2-pulse me-2"></i>
+              Ver Mi Rutina
+            </a>
+            <a class="btn btn-dark-soft px-4 py-2" href="progreso-cliente.html">
+              <i class="bi bi-graph-up-arrow me-2"></i>
+              Registrar Progreso
+            </a>
+          </div>
+        </section>
+      </main>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
